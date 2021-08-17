@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void encrypt(char s[],int n)
+{
+if(n%2==0)
+{
+for(int i=0;i<n;i+=2)
+{
+    swap(s[i],s[i+1]);
+}
+}
+else{
+    for(int i=0;i<n-1;i+=2)
+    {
+      swap(s[i],s[i+1]);
+    }
+}
+ cout<<"The Encrypted text is "<<endl;
+ for(int i=0;i<n;i++)
+    {
+        int idx=122+97-s[i];
+         cout<<char(idx);
+    } 
+    cout<<endl;  
+}
+
+/*void decrypt(char s[],int n)
+{
+if(n%2==0)
+{
+for(int i=0;i<n;i+=2)
+{
+    swap(s[i],s[i+1]);
+}
+}
+else{
+    for(int i=0;i<n-1;i+=2)
+    {
+      swap(s[i],s[i+1]);
+    }
+}
+ cout<<"The Decrypted text is "<<endl;
+ for(int i=0;i<n;i++)
+    {
+        int idx=122+97-s[i];
+         cout<<char(idx);
+    } 
+    cout<<endl;  
+}*/
+
+int main()
+{
+cout<<"ENCRYPTION "<<endl;
+cout<<"Enter the number of elements in string "<<endl;
+int n;
+cin>>n;
+char s[n];
+cout<<"Enter the text to be Encrypted"<<endl;
+cin>>s;
+encrypt(s,n);
+cout<<"DECRYPTION "<<endl;
+cout<<"Enter the number of elements in string "<<endl;
+int n1;
+cin>>n1;
+char s1[n1];
+cout<<"Enter the Encrypted text to decrypt "<<endl;
+cin>>s1;
+encrypt(s1,n1);
+	return 0;
+}
